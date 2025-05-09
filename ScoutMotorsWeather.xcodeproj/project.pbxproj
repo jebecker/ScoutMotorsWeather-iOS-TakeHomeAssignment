@@ -14,19 +14,11 @@
 			remoteGlobalIDString = F2C2498A2DCE9A8200983BAD;
 			remoteInfo = ScoutMotorsWeather;
 		};
-		F2C249A42DCE9A8400983BAD /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = F2C249832DCE9A8200983BAD /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = F2C2498A2DCE9A8200983BAD;
-			remoteInfo = ScoutMotorsWeather;
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		F2C2498B2DCE9A8200983BAD /* ScoutMotorsWeather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ScoutMotorsWeather.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F2C249992DCE9A8400983BAD /* ScoutMotorsWeatherTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ScoutMotorsWeatherTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		F2C249A32DCE9A8400983BAD /* ScoutMotorsWeatherUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ScoutMotorsWeatherUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -38,11 +30,6 @@
 		F2C2499C2DCE9A8400983BAD /* ScoutMotorsWeatherTests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = ScoutMotorsWeatherTests;
-			sourceTree = "<group>";
-		};
-		F2C249A62DCE9A8400983BAD /* ScoutMotorsWeatherUITests */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = ScoutMotorsWeatherUITests;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -62,13 +49,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		F2C249A02DCE9A8400983BAD /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -77,7 +57,6 @@
 			children = (
 				F2C2498D2DCE9A8200983BAD /* ScoutMotorsWeather */,
 				F2C2499C2DCE9A8400983BAD /* ScoutMotorsWeatherTests */,
-				F2C249A62DCE9A8400983BAD /* ScoutMotorsWeatherUITests */,
 				F2C2498C2DCE9A8200983BAD /* Products */,
 			);
 			sourceTree = "<group>";
@@ -87,7 +66,6 @@
 			children = (
 				F2C2498B2DCE9A8200983BAD /* ScoutMotorsWeather.app */,
 				F2C249992DCE9A8400983BAD /* ScoutMotorsWeatherTests.xctest */,
-				F2C249A32DCE9A8400983BAD /* ScoutMotorsWeatherUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -140,29 +118,6 @@
 			productReference = F2C249992DCE9A8400983BAD /* ScoutMotorsWeatherTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		F2C249A22DCE9A8400983BAD /* ScoutMotorsWeatherUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = F2C249B32DCE9A8400983BAD /* Build configuration list for PBXNativeTarget "ScoutMotorsWeatherUITests" */;
-			buildPhases = (
-				F2C2499F2DCE9A8400983BAD /* Sources */,
-				F2C249A02DCE9A8400983BAD /* Frameworks */,
-				F2C249A12DCE9A8400983BAD /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				F2C249A52DCE9A8400983BAD /* PBXTargetDependency */,
-			);
-			fileSystemSynchronizedGroups = (
-				F2C249A62DCE9A8400983BAD /* ScoutMotorsWeatherUITests */,
-			);
-			name = ScoutMotorsWeatherUITests;
-			packageProductDependencies = (
-			);
-			productName = ScoutMotorsWeatherUITests;
-			productReference = F2C249A32DCE9A8400983BAD /* ScoutMotorsWeatherUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -177,10 +132,6 @@
 						CreatedOnToolsVersion = 16.3;
 					};
 					F2C249982DCE9A8400983BAD = {
-						CreatedOnToolsVersion = 16.3;
-						TestTargetID = F2C2498A2DCE9A8200983BAD;
-					};
-					F2C249A22DCE9A8400983BAD = {
 						CreatedOnToolsVersion = 16.3;
 						TestTargetID = F2C2498A2DCE9A8200983BAD;
 					};
@@ -202,7 +153,6 @@
 			targets = (
 				F2C2498A2DCE9A8200983BAD /* ScoutMotorsWeather */,
 				F2C249982DCE9A8400983BAD /* ScoutMotorsWeatherTests */,
-				F2C249A22DCE9A8400983BAD /* ScoutMotorsWeatherUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -216,13 +166,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		F2C249972DCE9A8400983BAD /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		F2C249A12DCE9A8400983BAD /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -246,13 +189,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		F2C2499F2DCE9A8400983BAD /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -260,11 +196,6 @@
 			isa = PBXTargetDependency;
 			target = F2C2498A2DCE9A8200983BAD /* ScoutMotorsWeather */;
 			targetProxy = F2C2499A2DCE9A8400983BAD /* PBXContainerItemProxy */;
-		};
-		F2C249A52DCE9A8400983BAD /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = F2C2498A2DCE9A8200983BAD /* ScoutMotorsWeather */;
-			targetProxy = F2C249A42DCE9A8400983BAD /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -509,50 +440,6 @@
 			};
 			name = Release;
 		};
-		F2C249B42DCE9A8400983BAD /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = Z599R7LH75;
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 18.4;
-				MACOSX_DEPLOYMENT_TARGET = 15.4;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.becker.ScoutMotorsWeatherUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx xros xrsimulator";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2,7";
-				TEST_TARGET_NAME = ScoutMotorsWeather;
-				XROS_DEPLOYMENT_TARGET = 2.4;
-			};
-			name = Debug;
-		};
-		F2C249B52DCE9A8400983BAD /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = Z599R7LH75;
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 18.4;
-				MACOSX_DEPLOYMENT_TARGET = 15.4;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.becker.ScoutMotorsWeatherUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx xros xrsimulator";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2,7";
-				TEST_TARGET_NAME = ScoutMotorsWeather;
-				XROS_DEPLOYMENT_TARGET = 2.4;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -579,15 +466,6 @@
 			buildConfigurations = (
 				F2C249B12DCE9A8400983BAD /* Debug */,
 				F2C249B22DCE9A8400983BAD /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		F2C249B32DCE9A8400983BAD /* Build configuration list for PBXNativeTarget "ScoutMotorsWeatherUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				F2C249B42DCE9A8400983BAD /* Debug */,
-				F2C249B52DCE9A8400983BAD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
