@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+/// Container view to help display a ForecastListView with loading state
 struct ForecastListContainerView: View {
     @State var initialState: LoadingState = .loading
     let viewModel: ForecastListViewModeling

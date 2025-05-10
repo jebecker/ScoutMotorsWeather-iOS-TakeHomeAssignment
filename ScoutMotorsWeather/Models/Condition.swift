@@ -9,10 +9,16 @@ import Foundation
 
 struct Condition: Codable {
     let text: String
-    let iconURL: String
+    let iconUrlString: String
+    
+    /// Convenience computed property to convert the icon url string into a real URL
+    var iconURL: URL {
+        let fullUrlString = "https:" + iconUrlString
+        return URL(string: fullUrlString)!
+    }
     
     enum CodingKeys: String, CodingKey {
         case text
-        case iconURL = "icon"
+        case iconUrlString = "icon"
     }
 }
