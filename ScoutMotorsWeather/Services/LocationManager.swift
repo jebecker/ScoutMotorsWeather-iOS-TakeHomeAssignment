@@ -27,7 +27,8 @@ class LocationManager: NSObject, LocationManaging{
     }
     
     // Converts the call/response of CLLocationManager.requestLocation into an async method for easier use at
-    // the call site
+    // the call site. This method uses CheckedContinuation in order to simulate a true async call instead of having to use
+    // completion handlers
     // allows the call site to be try await locationManager.requestLocation
     func requestLocation() async throws -> CLLocationCoordinate2D {
         try await withCheckedThrowingContinuation { continuation in
