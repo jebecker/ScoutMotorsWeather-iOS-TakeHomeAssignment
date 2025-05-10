@@ -14,9 +14,12 @@ import Foundation
 /// Used to help display Alarms inside AlarmListView
 @MainActor
 protocol ForecastListViewModeling {
+    /// Array of ForecastDay objects which contain daily forecasts
     var forecasts: [ForecastDay] { get }
+    // The users current location
     var location: Location? { get }
     
+    /// Method to fetch the 7 day forecast for a users current location
     func fetchSevenDayForecast() async 
 }
 

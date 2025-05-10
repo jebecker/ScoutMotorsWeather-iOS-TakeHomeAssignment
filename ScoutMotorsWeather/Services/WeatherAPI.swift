@@ -25,8 +25,8 @@ struct WeatherAPI: WeatherAPIFetcher {
     
     func fetchSevenDayForecastForCurrentLocation() async -> ForecastResponse? {
         do {
-            // request location use authorization if it hasn't been already
-            await locationManager.requestAuthorization()
+            // request location use authorization if needed
+            await locationManager.requestAuthorizationIfNeeded()
             // grab the users current location
             let currentLocation = try await locationManager.requestLocation()
             

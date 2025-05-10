@@ -21,7 +21,7 @@ struct ForecastListContainerView: View {
                     EmptyForecastView()
                         .navigationTitle("7 Day Forecast")
                 } else {
-                    Text("We have data")
+                    ForecastListView(viewModel: viewModel)
                         .navigationTitle("7 Day Forecast")
                 }
             }

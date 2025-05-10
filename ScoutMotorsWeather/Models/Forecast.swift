@@ -15,7 +15,14 @@ struct Forecast: Codable {
     }
 }
 
-struct ForecastDay: Codable {
+struct ForecastDay: Codable, Identifiable {
+    var id = UUID()
+    
     let date: String
     let day: DayWeather
+    
+    enum CodingKeys: String, CodingKey {
+        case date
+        case day
+    }
 }
