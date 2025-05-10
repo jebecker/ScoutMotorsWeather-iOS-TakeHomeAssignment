@@ -8,10 +8,6 @@
 import Foundation
 
 struct Forecast: Codable {
-    let forecast: ForecastDays
-}
-
-struct ForecastDays: Codable {
     let forecastDays: [ForecastDay]
     
     enum CodingKeys: String, CodingKey {
@@ -21,5 +17,5 @@ struct ForecastDays: Codable {
 
 struct ForecastDay: Codable {
     let date: String
-    let day: Day
+    let day: DayWeather
 }

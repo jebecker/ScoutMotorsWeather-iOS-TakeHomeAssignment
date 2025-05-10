@@ -7,24 +7,36 @@
 
 import Foundation
 
-protocol WeatherAPIFetcher {
+protocol WeatherAPIFetcher: Sendable {
     /// Async method to fetch a users 7 day forecast using their current location
-    /// - Returns: A Forecast object or nil if it could not be fetched
-    func fetchSevenDayForecastForCurrentLocation() async -> Forecast?
+    /// - Returns: A ForecastResponse object or nil if it could not be fetched
+    func fetchSevenDayForecastForCurrentLocation() async -> ForecastResponse?
 }
 
+
+/// WeatherAPI marked with @MainActor in order to work with LocationManager
+@MainActor
 struct WeatherAPI: WeatherAPIFetcher {
-    let locationManager: LocationManager
+    let locationManager: LocationManaging
     
-    func fetchSevenDayForecastForCurrentLocation() async -> Forecast? {
+    init() {
+        self.locationManager = LocationManager()
+    }
+    
+    func fetchSevenDayForecastForCurrentLocation() async -> ForecastResponse? {
         do {
+            // request location use authorization if it hasn't been already
+            await locationManager.requestAuthorization()
+            // grab the users current location
             let currentLocation = try await locationManager.requestLocation()
+            
+            // construct the URL and make the API request
             let url = constructForecastEndpointURL(
                 latitude: currentLocation.latitude,
                 longitude: currentLocation.longitude
             )
             let (data, _) = try await URLSession.shared.data(from: url)
-            let forecast = try JSONDecoder().decode(Forecast.self, from: data)
+            let forecast = try JSONDecoder().decode(ForecastResponse.self, from: data)
             return forecast
         } catch {
             print(error)

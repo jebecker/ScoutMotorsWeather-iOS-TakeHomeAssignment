@@ -1,5 +1,5 @@
 //
-//  Day.swift
+//  DayWeather.swift
 //  ScoutMotorsWeather
 //
 //  Created by Jayme Becker on 5/9/25.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Day: Codable {
+struct DayWeather: Codable {
     let celsiusMax: Double
     let celsiusMin: Double
     let fahrenheitMax: Double

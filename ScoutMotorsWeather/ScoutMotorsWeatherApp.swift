@@ -9,9 +9,13 @@ import SwiftUI
 
 @main
 struct ScoutMotorsWeatherApp: App {
+    
+    // create single instances of the necessary view model(s) and inject them into the view(s)
+    private let forecastListViewModel = ForecastListViewModel(api: WeatherAPI())
+    
     var body: some Scene {
         WindowGroup {
-//            ContentView()
+            ForecastListContainerView(viewModel: forecastListViewModel)
         }
     }
 }
