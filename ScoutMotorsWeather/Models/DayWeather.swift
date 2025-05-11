@@ -7,6 +7,7 @@
 
 import Foundation
 
+/// Codable struct mapped to the 'day' JSON object returned from the /forecast endpoint
 struct DayWeather: Codable, Equatable {
     let celsiusMax: Double
     let celsiusMin: Double

@@ -21,7 +21,7 @@ struct ForecastConditionView: View {
                 image
                     .frame(width: 64.0, height: 64.0)
             } placeholder: {
-                ProgressView()
+                ProgressView() // In a real production level app, this would be an agreed upon image given by the Design team
             }
             
             Spacer()

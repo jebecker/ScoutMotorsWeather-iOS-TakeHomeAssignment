@@ -7,6 +7,7 @@
 
 import Foundation
 
+/// Codable struct mapped to the 'location' JSON object returned from the /forecast endpoint
 struct Location: Codable, Equatable {
     let name: String
     let region: String

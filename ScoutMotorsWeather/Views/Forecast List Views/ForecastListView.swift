@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+/// Enum defining the allowed temperature display settings
 enum TemperatureDisplaySettings: String {
     case celsius = "C°"
     case fahrenheit = "F°"

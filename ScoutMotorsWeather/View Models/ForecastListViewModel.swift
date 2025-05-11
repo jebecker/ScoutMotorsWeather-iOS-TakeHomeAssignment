@@ -8,10 +8,10 @@
 import Foundation
 
 /// ForecastListViewModeling protocol to define publicly accessible properties/methods and to allow for easy testability
-/// (can create mock objects using this protocol)
-/// This protocol is marked as @MainActor since it manipulates UI when it's state changes
-///  and those changes need to be done on the main thread
-/// Used to help display Alarms inside AlarmListView
+/// (can create mock objects using this protocol).
+/// This protocol is marked as @MainActor since it manipulates UI when it's state changes and those changes need to be
+/// done on the main thread.
+/// This is also used to help display Alarms inside AlarmListView
 @MainActor
 protocol ForecastListViewModeling {
     /// Array of ForecastDay objects which contain daily forecasts

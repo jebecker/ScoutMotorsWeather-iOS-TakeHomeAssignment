@@ -9,8 +9,8 @@ import SwiftUI
 
 /// Forecast Details View to display all details related to a specific Forecast
 /// As this view is simply displaying passed in data and requires no extra logic, I have elected not to pair it with
-/// a corresponding View Model. If this view were to ever change and does more than need to display data, I would add
-/// a corresponding View Model
+/// a corresponding View Model. If this view were to ever change and do more than display data, I would add
+/// a corresponding View Model.
 struct ForecastDetailsView: View {
     let location: Location
     let forecast: ForecastDay

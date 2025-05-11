@@ -8,7 +8,8 @@
 import Foundation
 import CoreLocation
 
-// MainActor isolated protocol in order to allow for "Sendable" conformance
+/// MainActor isolated protocol in order to allow for "Sendable" conformance.
+/// This will also allow for easy testability since we can create mock objects using this protocol
 @MainActor
 protocol LocationManaging {
     /// Async method to request a users location which throws on error
@@ -19,10 +20,10 @@ protocol LocationManaging {
     func requestAuthorizationIfNeeded() async
 }
 
-/// Custom LocationManager class to handle requesting a users current location
-/// Since CLLocationManager is still non-sendable under the hood
-/// and in order to make it a Sendable type, it has to be marked as @MainActor
-/// This also causes us to mark the delegate methods as 'nonisolated' and wrap the code inside with MainActor.assumeIsolated
+/// Custom LocationManager class to handle requesting a users current location.
+/// Since CLLocationManager is still non-sendable under the hood,
+/// we have to mark the class as @MainActor in order to make it a Sendable type.
+/// This also causes us to mark the delegate methods as 'nonisolated' and wrap the code inside with MainActor.assumeIsolated.
 /// This class will not have unit tests as this type of class is better suited for integration tests since testing this
 /// would make real api calls
 @MainActor
@@ -38,9 +39,9 @@ class LocationManager: NSObject, LocationManaging {
     }
     
     // Converts the call/response of CLLocationManager.requestLocation into an async method for easier use at
-    // the call site. This method uses CheckedContinuation in order to simulate a true async call instead of having to use
-    // completion handlers
-    // allows the call site to be try await locationManager.requestLocation
+    // the call site.
+    // This method uses CheckedContinuation in order to simulate an async call instead of having to use completion handlers.
+    // This allows the call site to be 'try await locationManager.requestLocation'.
     func requestLocation() async throws -> CLLocationCoordinate2D {
         try await withCheckedThrowingContinuation { continuation in
             locationContinuation = continuation
@@ -49,9 +50,9 @@ class LocationManager: NSObject, LocationManaging {
     }
     
     // Converts the call/response of CLLocationManager.requestWhenInUseAuthorization into an async method for easier use at
-    // the call site. This method uses CheckedContinuation in order to simulate a true async call instead of having to use
-    // completion handlers
-    // Allows the call site to be try await locationManager.requestAuthorization
+    // the call site.
+    // This method uses CheckedContinuation in order to simulate a true async call instead of having to use completion handlers.
+    // This allows the call site to be 'try await locationManager.requestAuthorization'
     func requestAuthorizationIfNeeded() async {
         await withCheckedContinuation { continuation in
             authorizationContinuation = continuation

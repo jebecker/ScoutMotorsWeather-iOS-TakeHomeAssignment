@@ -24,7 +24,7 @@ struct ForecastListViewModelTests {
         #expect(sut.location == expectedForecastResponse.location)
     }
     
-    @Test func fetchSevenDayForecastFial() async {
+    @Test func fetchSevenDayForecastFail() async {
         let expectedLocation = Location(name: "", country: "", lat: 0, lon: 0)
         let sut = ForecastListViewModel(api: MockWeatherAPI())
         await sut.fetchSevenDayForecast()

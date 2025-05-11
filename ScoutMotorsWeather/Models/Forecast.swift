@@ -7,6 +7,7 @@
 
 import Foundation
 
+/// Codable struct mapped to the 'forecast' JSON object returned from the /forecast endpoint
 struct Forecast: Codable {
     let forecastDays: [ForecastDay]
     
@@ -15,6 +16,7 @@ struct Forecast: Codable {
     }
 }
 
+/// Codable struct mapped to the 'forecastday' JSON object returned from the /forecast endpoint
 struct ForecastDay: Codable, Identifiable, Equatable {
     var id = UUID()
     
