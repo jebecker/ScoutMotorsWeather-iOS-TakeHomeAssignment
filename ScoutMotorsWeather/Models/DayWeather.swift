@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct DayWeather: Codable {
+struct DayWeather: Codable, Equatable {
     let celsiusMax: Double
     let celsiusMin: Double
     let fahrenheitMax: Double

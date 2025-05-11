@@ -13,9 +13,9 @@ struct ForecastConditionView: View {
     
     var body: some View {
         HStack {
-            Text(condition.text)
-            
             Spacer()
+            
+            Text(condition.text)
             
             AsyncImage(url: condition.iconURL) { image in
                 image
@@ -23,6 +23,8 @@ struct ForecastConditionView: View {
             } placeholder: {
                 ProgressView()
             }
+            
+            Spacer()
         }
     }
 }

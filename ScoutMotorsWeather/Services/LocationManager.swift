@@ -8,6 +8,7 @@
 import Foundation
 import CoreLocation
 
+// MainActor isolated protocol in order to allow for "Sendable" conformance
 @MainActor
 protocol LocationManaging {
     /// Async method to request a users location which throws on error
@@ -22,6 +23,8 @@ protocol LocationManaging {
 /// Since CLLocationManager is still non-sendable under the hood
 /// and in order to make it a Sendable type, it has to be marked as @MainActor
 /// This also causes us to mark the delegate methods as 'nonisolated' and wrap the code inside with MainActor.assumeIsolated
+/// This class will not have unit tests as this type of class is better suited for integration tests since testing this
+/// would make real api calls
 @MainActor
 class LocationManager: NSObject, LocationManaging {
     private var locationManager: CLLocationManager?

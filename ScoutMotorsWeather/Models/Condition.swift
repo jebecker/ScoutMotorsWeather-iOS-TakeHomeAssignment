@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Condition: Codable {
+struct Condition: Codable, Equatable {
     let text: String
     let iconUrlString: String
     

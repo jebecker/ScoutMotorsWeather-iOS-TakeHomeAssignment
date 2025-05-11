@@ -15,7 +15,7 @@ struct Forecast: Codable {
     }
 }
 
-struct ForecastDay: Codable, Identifiable {
+struct ForecastDay: Codable, Identifiable, Equatable {
     var id = UUID()
     
     let date: String

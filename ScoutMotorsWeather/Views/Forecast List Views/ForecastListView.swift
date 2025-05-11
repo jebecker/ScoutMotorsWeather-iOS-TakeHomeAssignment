@@ -8,18 +8,30 @@
 import SwiftUI
 
 enum TemperatureDisplaySettings: String {
-    case celsius = "Celsius"
-    case fahrenheit = "Fahrenheit"
+    case celsius = "C°"
+    case fahrenheit = "F°"
 }
 
 /// View to show a list of ForecastView's with the ability to toggle between different temperature display settings
+/// and present a detailed view for a specific forecast
 struct ForecastListView: View {
     @State var temperatureDisplaySettings: TemperatureDisplaySettings = .fahrenheit
     let viewModel: ForecastListViewModeling
     
     var body: some View {
         List(viewModel.forecasts) { forecast in
-            ForecastView(forecast: forecast, presentInCelsius: temperatureDisplaySettings == .celsius)
+            NavigationLink {
+                ForecastDetailsView(
+                    location: viewModel.location,
+                    forecast: forecast,
+                    presentInCelsius: temperatureDisplaySettings == .celsius
+                )
+            } label: {
+                ForecastView(
+                    forecast: forecast,
+                    presentInCelsius: temperatureDisplaySettings == .celsius
+                )
+            }
         }
         .toolbar {
             Menu {
@@ -28,7 +40,7 @@ struct ForecastListView: View {
                     Text("Celsius").tag(TemperatureDisplaySettings.celsius)
                 }
             } label: {
-                Text(temperatureDisplaySettings.rawValue)
+                Text("Temperature: \(temperatureDisplaySettings.rawValue)")
             }
         }
     }

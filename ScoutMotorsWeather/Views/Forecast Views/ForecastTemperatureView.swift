@@ -38,7 +38,7 @@ struct ForecastTemperatureView: View {
                 Text("L: ")
                 
                 Text(String(format: "%.0f",
-                            presentInCelsius ? dayWeather.fahrenheitMin : dayWeather.fahrenheitMin))
+                            presentInCelsius ? dayWeather.celsiusMin : dayWeather.fahrenheitMin))
                 
                 Text("°")
             }

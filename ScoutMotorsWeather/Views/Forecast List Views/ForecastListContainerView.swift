@@ -28,6 +28,11 @@ struct ForecastListContainerView: View {
             }
         }
         .task {
+            // Due to the nature of how this app is architected, only making an API call in this .task block ensures that
+            // we will only ever make one API call so that the API rate limit is not a concern.
+            // If I were to add additional features to this assignment, I could add pull to refresh using the
+            // .refreshable modifier and limit the amount of times you can refresh the data by persisting the last time
+            // the data was pulled and only allow a "refresh" after a certain amount of time has passed
             await viewModel.fetchSevenDayForecast()
             initialState = .loaded
         }

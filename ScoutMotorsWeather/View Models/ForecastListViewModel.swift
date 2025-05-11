@@ -17,7 +17,7 @@ protocol ForecastListViewModeling {
     /// Array of ForecastDay objects which contain daily forecasts
     var forecasts: [ForecastDay] { get }
     // The users current location
-    var location: Location? { get }
+    var location: Location { get }
     
     /// Method to fetch the 7 day forecast for a users current location
     func fetchSevenDayForecast() async 
@@ -28,7 +28,7 @@ protocol ForecastListViewModeling {
 class ForecastListViewModel: ForecastListViewModeling {
     var api: WeatherAPIFetcher
     var forecasts: [ForecastDay] = []
-    var location: Location?
+    var location: Location = Location()
     
     init(api: WeatherAPIFetcher) {
         self.api = api
